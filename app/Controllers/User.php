@@ -21,7 +21,7 @@ class user extends BaseController
     }
     public function delete($id){
         if($this->userModel->delete($id)){
-            echo view('messages', [
+            echo view('message', [
                 'message' => 'Usuário Excluido com Sucesso'
             ]);
         }else{

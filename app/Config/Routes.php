@@ -32,6 +32,7 @@ $routes->set404Override();
 $routes->get('/', 'user::index');
 $routes->get('/user', 'user::index');
 $routes->get('/user/delete/(:num)','user::delete/$1');
+$routes->get('/user/create','user::create');
 
 
 /*
