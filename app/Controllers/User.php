@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserModel;
 
-class user extends BaseController implements p
+class user extends BaseController
 {
     private $userModel;
     
@@ -29,7 +29,7 @@ class user extends BaseController implements p
         }
     }
     public function create(){
-        return view('form');
+        return view('form'); 
     }
     public function store(){
         if ($this ->userModel->save($this->request->getPost())){
