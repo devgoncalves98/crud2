@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserModel;
 
-class user extends BaseController
+class user extends BaseController implements p
 {
     private $userModel;
     
@@ -32,13 +32,18 @@ class user extends BaseController
         return view('form');
     }
     public function store(){
-        if ($this -> userModel->save($this->request->getPost())){
-            return view ("messages", [
+        if ($this ->userModel->save($this->request->getPost())){
+            return view ("message", [
                 'message' => 'Usuário salvo com sucesso'
             ]);
         }else{
                 echo "Ocorreu um erro.";
             }
         
+    }
+    public function edit($id){
+        return view('form', [
+            'user' => $this->userModel->find($id)
+        ]);
     }
 }

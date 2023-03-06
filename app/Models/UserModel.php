@@ -15,13 +15,14 @@ class UserModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = false;
     protected $allowedFields    = [
+        'id',
         'Name',
         'LastName',
         'Email'
     ];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
