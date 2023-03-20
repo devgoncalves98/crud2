@@ -51,12 +51,6 @@
 </head>
 
 <body>
-  <div class="container mb-3 bg-black">
-    <header>
-      <p>Bom dia colaborador</p>
-
-    </header>
-  </div>
   <div class="container mt-5 bg-light">
     <?php echo anchor(base_url('user/create'), 'Novo Usuário', ['class' => 'btn btn-success mb-3']) ?>
     <table class="table">
