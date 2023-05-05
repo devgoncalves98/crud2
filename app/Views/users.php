@@ -37,6 +37,10 @@
       color: #ddd;
 
     }
+    .check{
+      width: 15px;
+      height: 15px;
+    }
   </style>
   <script>
     function confirma() {
@@ -53,6 +57,8 @@
 <body>
   <div class="container mt-5 bg-light">
     <?php echo anchor(base_url('user/create'), 'Novo Usuário', ['class' => 'btn btn-success mb-3']) ?>
+    <!-- Colocar lugar de excluir o cadastro -->
+    <?php echo anchor(base_url('/login'), 'Login', ['class' => 'btn btn-secondary mb-3 justify-content-md-end']) ?>
     <table class="table">
       <thead>
         <tr>
@@ -71,12 +77,12 @@
             <td><?php echo $user['LastName'] ?></td>
             <td><?php echo $user['Email'] ?></td>
             <td>
-              <?php echo anchor('user/edit/' . $user['id'], 'Editar') ?>
-              -
-              <?php echo anchor('user/delete/' . $user['id'], 'Excluir', ['onclick' => 'return confirma()']) ?>
+              <?php echo anchor('user/edit/' . $user['id'], 'Editar', ['class' => 'btn btn-primary mb-2']) ?>
+              <?php echo anchor('user/delete/' . $user['id'], 'Excluir', ['onclick' => 'return confirma()', 'class' => 'btn btn-danger mb-2'])?>
             </td>
           </tr>
         <?php endforeach; ?>
+        
       </tbody>
     </table>
     <?php echo $pager->links(); ?>

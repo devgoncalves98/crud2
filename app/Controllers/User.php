@@ -15,7 +15,7 @@ class user extends BaseController
     public function index()
     {
         return view('users',[
-            'users' => $this->userModel->paginate(10),
+            'users' => $this->userModel->paginate(null, "default"),
             'pager' => $this->userModel->pager
         ]);
     }
@@ -24,6 +24,7 @@ class user extends BaseController
             echo view('message', [
                 'message' => 'Usuário Excluido com Sucesso'
             ]);
+            header('location:/startup/public/');
         }else{
             echo "Erro ao excluir";
         }
@@ -31,7 +32,7 @@ class user extends BaseController
     public function create(){
         return view('form'); 
     }
-    public function store(){
+    public function save(){
         if ($this ->userModel->save($this->request->getPost())){
             return view ("message", [
                 'message' => 'Usuário salvo com sucesso'

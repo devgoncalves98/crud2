@@ -34,8 +34,9 @@ $routes->get('/user', 'user::index');
 $routes->get('/user/delete/(:num)','user::delete/$1');
 $routes->get('/user/edit/(:num)','user::edit/$1');
 $routes->get('/user/create','user::create');
-$routes->post('/user/store','user::store');
+$routes->post('/user/save','user::save');
 
+$routes->get('/login', 'admin::login');
 
 /*
  * --------------------------------------------------------------------
@@ -53,3 +54,12 @@ $routes->post('/user/store','user::store');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+// defined('BASEPATH') OR exit('No direct script access allowed');
+
+
+// $route['default_controller'] = 'users';
+// $route['404_override'] = '';
+// $route['translate_uri_dashes'] = FALSE;
+
+
+// $route['my-post'] = 'AjaxController';

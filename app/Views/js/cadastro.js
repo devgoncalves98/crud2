@@ -14,4 +14,4 @@ function validacao(){
 });
 }
 
-salvarBtn.addEventListener('#salvar', validacao);
+salvarBtn.addEventListener('#salvar', validacao());
