@@ -13,12 +13,19 @@ use App\Models\AdmModel;
         }
         
         public function admPadrao(){ 
-          $admin = 'admin';
-          $login = 'adm1234';
-        }
+          if ($this->admModel->admPadrao($this->request->getPost())){
+            return view('message', [
+              'message' => 'Permissões de administrador concedidas'
+            ]);
+            
+           }else{
+              echo "Ocorreu um erro";       
+          }
+                   }
         public function login(){
           return view('login');
         }
+
 }
 
 

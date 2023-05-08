@@ -37,6 +37,7 @@ $routes->get('/user/create','user::create');
 $routes->post('/user/save','user::save');
 
 $routes->get('/login', 'admin::login');
+$routes->post('/login/admPadrao', 'admin::admPadrao');
 
 /*
  * --------------------------------------------------------------------

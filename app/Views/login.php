@@ -22,16 +22,17 @@
 <body>
   <div class="container mt-3  bg-light">
     <h1 class="lead">Login page</h1>
-    <?php echo form_open('user/save') ?>
+    <?php echo form_open('login/admPadrao') ?>
       <div class="form-grup">
         <label for="login">Login</label>
-        <input type="text" value="<?php echo isset($adm['login']) ? $adm['login'] : '' ?>" name="login" id="login" class="form-control" required minlength="3">
+        <input type="text" value="<?php echo isset($adm['login']) ? $adm['login'] : 'admin' ?>" name="login" id="login" class="form-control" required minlength="3">
       </div>
       <div class="form-grup">
         <label for="senha">Senha</label>
-        <input type="text" value="<?php echo isset($adm['senha']) ? $adm['senha'] : '' ?>" name="senha" id="senha" class="form-control" required minlength="3">
+        <input type="text" value="<?php echo isset($adm['senha']) ? $adm['senha'] : 'adm1234' ?>" name="senha" id="senha" class="form-control" required minlength="3">
       </div>
-    <button type="submit" id="logar" class="btn mt-2 btn-primary">Login</button>
+    <button type="submit" id="logar" class="btn mt-2 btn-primary" >Login</button>
     </div>
+    <?php form_close()?>
 </body>
 </html>
