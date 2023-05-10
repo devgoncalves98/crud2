@@ -56,13 +56,17 @@
 
 <body>
   <div class="container mt-5 bg-light">
-  <table class="table">
+    <?php echo anchor(base_url('user/create'), 'Novo Usuário', ['class' => 'btn btn-success mb-3']) ?>
+    <!-- Colocar lugar de excluir o cadastro -->
+    <?php echo anchor(base_url('/login'), 'Login', ['class' => 'btn btn-secondary mb-3 justify-content-md-end']) ?>
+    <table class="table">
       <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
           <th>LastName</th>
           <th>Email</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -72,6 +76,10 @@
             <td><?php echo $user['Name'] ?></td>
             <td><?php echo $user['LastName'] ?></td>
             <td><?php echo $user['Email'] ?></td>
+            <td>
+              <?php echo anchor('user/edit/' . $user['id'], 'Editar', ['class' => 'btn btn-primary mb-2']) ?>
+              <?php echo anchor('user/delete/' . $user['id'], 'Excluir', ['onclick' => 'return confirma()', 'class' => 'btn btn-danger mb-2'])?>
+            </td>
           </tr>
         <?php endforeach; ?>
         

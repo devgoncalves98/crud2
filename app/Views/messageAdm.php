@@ -12,7 +12,7 @@
   <div class="container mt-5">
     <div class="alert alert-info">
       <?php echo $message;?>
-      <p class="mt-3"><?php echo anchor('/user', 'Pagina Inicial');?></p>
+      <p class="mt-3"><?php echo anchor('/userAdm', 'Pagina Inicial de administrador');?></p>
     </div>
   </div>
 </body>

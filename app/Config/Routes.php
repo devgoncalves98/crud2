@@ -11,8 +11,8 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('user');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('admin');
+$routes->setDefaultMethod('login');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -29,14 +29,14 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'user::index');
 $routes->get('/user', 'user::index');
-$routes->get('/user/delete/(:num)','user::delete/$1');
-$routes->get('/user/edit/(:num)','user::edit/$1');
-$routes->get('/user/create','user::create');
-$routes->post('/user/save','user::save');
+$routes->get('/userAdm', 'user::indexAdm');
+$routes->get('/userAdm/delete/(:num)','user::delete/$1');
+$routes->get('/userAdm/edit/(:num)','user::edit/$1');
+$routes->get('/userAdm/create','user::create');
+$routes->post('/userAdm/save','user::save');
 
-$routes->get('/login', 'admin::login');
+$routes->get('/', 'admin::login');
 $routes->post('/login/admPadrao', 'admin::admPadrao');
 
 /*

@@ -7,14 +7,16 @@ use App\Models\AdmModel;
   class admin extends BaseController
 {
         private $admModel;
+        
 
         public function __construct(){
           $this->admModel = new AdmModel();
         }
         
         public function admPadrao(){ 
-          if ($this->admModel->admPadrao($this->request->getPost())){
-            return view('message', [
+          if ($this->admModel->admPadrao()){
+            
+            return view('messageAdm', [
               'message' => 'Permissões de administrador concedidas'
             ]);
             

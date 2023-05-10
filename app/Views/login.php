@@ -20,19 +20,33 @@
   }
 </style>
 <body>
+  <!-- // if($codigoAdm){
+     // $codigoAdm = 'adm1234';
+     // view('message',['message' => 'Permissoes de administrador concedidas']);
+//} else {echo"deu algum erro";} -->
+
   <div class="container mt-3  bg-light">
     <h1 class="lead">Login page</h1>
-    <?php echo form_open('login/admPadrao') ?>
+    <?php if($adm['cod'] = '1254'){
+      form_open('/login/admPadrao');}
+      else{
+        form_open('/user');
+      } ?>
       <div class="form-grup">
         <label for="login">Login</label>
-        <input type="text" value="<?php echo isset($adm['login']) ? $adm['login'] : 'admin' ?>" name="login" id="login" class="form-control" required minlength="3">
+        <input type="text" value="<?php echo isset($adm['login']) ? $adm['login'] : '' ?>" name="login" id="login" class="form-control" required minlength="3">
       </div>
       <div class="form-grup">
         <label for="senha">Senha</label>
-        <input type="text" value="<?php echo isset($adm['senha']) ? $adm['senha'] : 'adm1234' ?>" name="senha" id="senha" class="form-control" required minlength="3">
+        <input type="password" value="<?php echo isset($adm['senha']) ? $adm['senha'] : '' ?>" name="senha" id="senha" class="form-control" required minlength="3">
+      </div> 
+      <div class="form-grup">
+        <label for="cod">Codigo para administrador</label>
+        <input type="password" value="<?php echo isset($adm['cod']) ? $adm['cod'] : '' ?>" name="codigo" id="cod" class="form-control" minlength="3">
       </div>
-    <button type="submit" id="logar" class="btn mt-2 btn-primary" >Login</button>
+    <div class="form-grup">
+    <button type="submit" id="logar" class="btn mt-2 btn-primary">Login</button>
     </div>
-    <?php form_close()?>
+     </div>
 </body>
 </html>

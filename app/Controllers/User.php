@@ -19,6 +19,13 @@ class user extends BaseController
             'pager' => $this->userModel->pager
         ]);
     }
+    public function indexAdm()
+    {
+        return view('usersAdm',[
+            'users' => $this->userModel->paginate(null, "default"),
+            'pager' => $this->userModel->pager
+        ]);
+    }
     public function delete($id){
         if($this->userModel->delete($id)){
             echo view('message', [
