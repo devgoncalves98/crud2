@@ -21,18 +21,18 @@
 </style>
 <body>
   <div class="container mt-3  bg-light border-5 border-danger">
-    <?php echo form_open('user/save') ?>
+    <form action="save" method="post">
       <div class="form-grup">
-        <label for="Name">Name</label>
-        <input type="text" value="<?php echo isset($user['Name']) ? $user['Name'] : '' ?>" name="Name" id="Name" class="form-control" required minlength="3">
+        <label for="name">Name</label>
+        <input type="text" value="<?php echo isset($user['name']) ? $user['name'] : '' ?>" name="name" id="name" class="form-control" required minlength="3">
       </div>
       <div class="form-grup">
-        <label for="LastName">Last Name</label>
-        <input type="text" value="<?php echo isset($user['LastName']) ? $user['LastName'] : '' ?>" name="LastName" id="LastName" class="form-control" required minlength="3">
+        <label for="lastname">Last Name</label>
+        <input type="text" value="<?php echo isset($user['lastname']) ? $user['lastname'] : '' ?>" name="lastname" id="lastname" class="form-control" required minlength="3">
       </div>
       <div class="form-grup">
-        <label for="Email">Email</label>
-        <input type="email" value="<?php echo isset($user['Email']) ? $user['Email'] : '' ?>" name="Email" id="Email" class="form-control" required minlength="3">
+        <label for="email">Email</label>
+        <input type="email" value="<?php echo isset($user['email']) ? $user['email'] : '' ?>" name="email" id="email" class="form-control" required minlength="3">
       </div>
       <div class="form-group">
         <label class="checkbox">
@@ -42,6 +42,7 @@
       </div>
     <button type="submit" id="salvar" class="btn mt-2 btn-primary">Cadastrar</button>
     <input type="hidden" name="id" value="<?php echo isset($user['id']) ? $user['id'] : '' ?>">
+    </form>
   </div>
 </body>
 </html>

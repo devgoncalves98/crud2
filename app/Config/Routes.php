@@ -30,13 +30,14 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/user', 'user::index');
-$routes->get('/userAdm', 'user::indexAdm');
-$routes->get('/userAdm/delete/(:num)','user::delete/$1');
-$routes->get('/userAdm/edit/(:num)','user::edit/$1');
-$routes->get('/userAdm/create','user::create');
-$routes->post('/userAdm/save','user::save');
+// $routes->get('/user', 'user::indexAdm');
+$routes->get('/user/delete/(:num)','user::delete/$1');
+$routes->get('/user/edit/(:num)','user::edit/$1');
+$routes->get('/user/create','user::create');
+$routes->post('/user/save','user::save');
 
 $routes->get('/', 'admin::login');
+$routes->get('/cadastro.php', 'admin::cadastro');
 $routes->post('/login/admPadrao', 'admin::admPadrao');
 
 /*

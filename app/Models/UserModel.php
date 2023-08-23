@@ -10,15 +10,14 @@ class UserModel extends Model
     protected $table            = 'users';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 1;
+    protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = false;
+    protected $protectFields    = true;
     protected $allowedFields    = [
-        'id',
-        'Name',
-        'LastName',
-        'Email'
+        'name',
+        'lastname',
+        'email'
     ];
 
     // Dates

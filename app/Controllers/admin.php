@@ -27,6 +27,9 @@ use App\Models\AdmModel;
         public function login(){
           return view('login');
         }
+        public function cadastro(){
+          return view('cadastro');
+        }
 
 }
 

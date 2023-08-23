@@ -13,7 +13,7 @@ class AdmModel extends Model
     protected $insertID         = 1;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = false;
+    protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
         'login',

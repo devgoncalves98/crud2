@@ -20,13 +20,8 @@
   }
 </style>
 <body>
-  <!-- // if($codigoAdm){
-     // $codigoAdm = 'adm1234';
-     // view('message',['message' => 'Permissoes de administrador concedidas']);
-//} else {echo"deu algum erro";} -->
-
   <div class="container mt-3  bg-light">
-    <h1 class="lead">Login page</h1>
+    <h1 class="lead">Pagina de Cadastro</h1>
     
       <div class="form-grup">
         <label for="login">Login</label>
@@ -36,18 +31,8 @@
         <label for="senha">Senha</label>
         <input type="password" value="<?php echo isset($adm['senha']) ? $adm['senha'] : '' ?>" name="senha" id="senha" class="form-control" required minlength="3">
       </div> 
-      <div class="form-grup">
-        <label for="cod">Codigo para administrador</label>
-        <input type="password" value="<?php echo isset($adm['cod']) ? $adm['cod'] : '' ?>" name="codigo" id="cod" class="form-control" minlength="3">
-      </div>
     <div class="form-grup">
-      <?php if($adm['cod'] = '1254'){
-      form_open('/login/admPadrao');}
-      else{
-        form_open('/user');
-      } ?>
-    <button type="submit" id="enviar" class="btn mt-2 btn-primary">Login</button>
-    <a class="btn mt-2 btn-primary" href="./cadastro.php">Cadastrar-se</a>
+    <button type="submit" id="salvar" class="btn mt-2 btn-primary">Cadastrar</button>
     </div>
      </div>
 </body>
